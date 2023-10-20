@@ -1,0 +1,15 @@
+C:\mydip\StajApp\bin\Debug\StajApp.exe.config
+C:\mydip\StajApp\bin\Debug\StajApp.exe
+C:\mydip\StajApp\bin\Debug\StajApp.pdb
+C:\mydip\StajApp\obj\Debug\StajApp.csproj.AssemblyReference.cache
+C:\mydip\StajApp\obj\Debug\MainWindow.g.cs
+C:\mydip\StajApp\obj\Debug\App.g.cs
+C:\mydip\StajApp\obj\Debug\StajApp_MarkupCompile.cache
+C:\mydip\StajApp\obj\Debug\StajApp_MarkupCompile.lref
+C:\mydip\StajApp\obj\Debug\MainWindow.baml
+C:\mydip\StajApp\obj\Debug\StajApp.g.resources
+C:\mydip\StajApp\obj\Debug\StajApp.Properties.Resources.resources
+C:\mydip\StajApp\obj\Debug\StajApp.csproj.GenerateResource.cache
+C:\mydip\StajApp\obj\Debug\StajApp.csproj.CoreCompileInputs.cache
+C:\mydip\StajApp\obj\Debug\StajApp.exe
+C:\mydip\StajApp\obj\Debug\StajApp.pdb
