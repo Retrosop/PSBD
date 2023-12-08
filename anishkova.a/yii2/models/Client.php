@@ -43,14 +43,14 @@ class Client extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idclient' => 'Idclient',
-            'urlreferal' => 'Urlreferal',
-            'fio' => 'Fio',
-            'telef' => 'Telef',
+            'idclient' => 'Id клиент',
+            'urlreferal' => 'Url-ссылка',
+            'fio' => 'ФИО',
+            'telef' => 'Телефон',
             'email' => 'Email',
-            'sferawork' => 'Sferawork',
-            'comment' => 'Comment',
-            'firma' => 'Firma',
+            'sferawork' => 'Сфера работы',
+            'comment' => 'Комментарий',
+            'firma' => 'Фирма',
         ];
     }
 }

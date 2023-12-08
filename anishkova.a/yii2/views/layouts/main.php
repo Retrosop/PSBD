@@ -42,12 +42,12 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             ['label' => 'Главная', 'url' => ['/site/index']],
 			
 			 
-		['label' => 'База данных',
+		['label' => 'Информация',
                             'items' => [
-                               	['label' => 'client', 'url' => ['/client']],
-	                        	['label' => 'manager', 'url' => ['/manager']],
-								['label' => 'statement', 'url' => ['/statement']],
-								['label' => 'vidi', 'url' => ['/vidi']],
+                               	['label' => 'Клиент', 'url' => ['/client']],
+	                        	['label' => 'Менеджер', 'url' => ['/manager']],
+								['label' => 'Чек', 'url' => ['/statement']],
+								['label' => 'Виды ипотеки', 'url' => ['/vidi']],
                             ],
              ],
             ['label' => 'О нас', 'url' => ['/site/about']],

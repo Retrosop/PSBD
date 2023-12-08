@@ -39,10 +39,10 @@ class Vidi extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idvidi' => 'Idvidi',
+            'idvidi' => 'Id виды ипотеки',
             'name' => 'Имя',
-            'desc' => 'Desc',
-            'detail' => 'Detail',
+            'desc' => 'Комментарий',
+            'detail' => 'Детали',
         ];
     }
 }

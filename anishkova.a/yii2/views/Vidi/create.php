@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\Vidi $model */
 
-$this->title = 'Create Vidi';
+$this->title = 'Изменить виды ипотеки';
 $this->params['breadcrumbs'][] = ['label' => 'Vidis', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

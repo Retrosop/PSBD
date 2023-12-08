@@ -1,0 +1,62 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Видеочат</title>
+    <style>
+        #localVideo, #remoteVideo {
+            width: 400px;
+            height: 300px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Видеочат</h1>
+    <video id="localVideo" autoplay></video>
+    <video id="remoteVideo" autoplay></video>
+
+    <script>
+        // Получаем доступ к видео и аудио устройствам пользователя
+        navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+            .then(function(stream) {
+                var localVideo = document.getElementById("localVideo");
+                localVideo.srcObject = stream;
+
+                // Создаем подключение к другому участнику видеочата
+                var configuration = { iceServers: [{ urls: "stun:stun.1.google.com:19302" }] };
+                var peerConnection = new RTCPeerConnection(configuration);
+
+                // Добавляем локальный медиапоток в подключение
+                stream.getTracks().forEach(function(track) {
+                    peerConnection.addTrack(track, stream);
+                });
+
+                // Получаем удаленный медиапоток от другого участника видеочата
+                peerConnection.ontrack = function(event) {
+                    var remoteVideo = document.getElementById("remoteVideo");
+                    remoteVideo.srcObject = event.streams[0];
+                };
+
+                // Отправляем сигнальные сообщения через сигнальный сервер
+                // (необходимо реализовать отдельно)
+                // Примеры сигнального сервера: Socket.io, WebSockets, Firebase, etc.
+
+                // Обработка ICE-кандидатов
+                peerConnection.onicecandidate = function(event) {
+                    if (event.candidate) {
+                        // Отправляем ICE-кандидата другому участнику видеочата
+                        // через сигнальный сервер
+                    }
+                };
+
+                // Обработка сигнальных сообщений от другого участника видеочата
+                // (необходимо реализовать отдельно)
+                // Пример: прием и обработка сообщений через сигнальный сервер
+            })
+            .catch(function(error) {
+                console.error("Ошибка доступа к медиаустройствам:", error);
+            });
+    </script>
+</body>
+</html>

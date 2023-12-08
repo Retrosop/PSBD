@@ -53,21 +53,21 @@ class Statement extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idstatement' => 'Idstatement',
-            'dates' => 'Dates',
-            'idclent' => 'Idclent',
-            'namework' => 'Namework',
-            'daterin' => 'Daterin',
-            'daterout' => 'Daterout',
-            'desc' => 'Desc',
-            'summa' => 'Summa',
-            'srokkredita' => 'Srokkredita',
-            'pervonzvon' => 'Pervonzvon',
-            'countteam' => 'Countteam',
-            'idmanager' => 'Idmanager',
-            'resoluciy' => 'Resoluciy',
-            'statuswork' => 'Statuswork',
-            'dateof' => 'Dateof',
+            'idstatement' => 'Id статуса менеджера',
+            'dates' => 'Дата',
+            'idclent' => 'Id клиента',
+            'namework' => 'Название работы',
+            'daterin' => 'Дата обращения',
+            'daterout' => 'Дата начала работы',
+            'desc' => 'Комментарий',
+            'summa' => 'Сумма',
+            'srokkredita' => 'Срок кредита',
+            'pervonzvon' => 'Первоначальный взнос',
+            'countteam' => 'Оценка',
+            'idmanager' => 'Id менеджера',
+            'resoluciy' => 'Этап сделки',
+            'statuswork' => 'Статус работы',
+            'dateof' => 'Дата завершения',
         ];
     }
 }

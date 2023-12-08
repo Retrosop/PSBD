@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /** @var app\models\client $model */
 
 $this->title = $model->idclient;
-$this->params['breadcrumbs'][] = ['label' => 'Clients', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Клиент', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -16,12 +16,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'idclient' => $model->idclient], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'idclient' => $model->idclient], [
+        <?= Html::a('Update', ['Обновить', 'idclient' => $model->idclient], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['Удалить', 'idclient' => $model->idclient], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
+                'confirm' => 'Вы уверены, что хотите удалить этот элемент?',
+                'method' => 'Сохранить',
             ],
         ]) ?>
    </p>

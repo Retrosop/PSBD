@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\statementSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Statements';
+$this->title = 'Статус менеджера';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="statement-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Statement', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Изменить статус менеджера', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>

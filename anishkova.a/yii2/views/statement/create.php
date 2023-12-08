@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\statement $model */
 
-$this->title = 'Create Statement';
-$this->params['breadcrumbs'][] = ['label' => 'Statements', 'url' => ['index']];
+$this->title = 'Изменить статус менеджера';
+$this->params['breadcrumbs'][] = ['label' => 'Статус менеджера', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="statement-create">

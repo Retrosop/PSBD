@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\Manager $model */
 
-$this->title = 'Create Manager';
+$this->title = 'Изменить менеджера';
 $this->params['breadcrumbs'][] = ['label' => 'Managers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

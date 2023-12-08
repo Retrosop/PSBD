@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\ManagerSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Managers';
+$this->title = 'Менеджер';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="manager-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Manager', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Изменить менеджера', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>

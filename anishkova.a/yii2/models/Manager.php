@@ -40,11 +40,11 @@ class Manager extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idmanager' => 'Idmanager',
-            'fio' => 'Fio',
-            'telef' => 'Telef',
+            'idmanager' => 'Id Менеждера',
+            'fio' => 'ФИО',
+            'telef' => 'Телефон',
             'email' => 'Email',
-            'goodswork' => 'Goodswork',
+            'goodswork' => 'Оценка работы',
         ];
     }
 }
