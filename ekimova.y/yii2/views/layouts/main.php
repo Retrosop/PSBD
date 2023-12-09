@@ -27,9 +27,9 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     <?php $this->head() ?>
 </head>
 <style>
-        body
+    body
     {
-        background-image: url('/web/image/aerol.png') !important;
+        background-image: url('/image/aerol.png') !important;
         background-size:100%;
         color: white !important;
     }
@@ -62,7 +62,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                             'items' => [
                                	['label' => 'Горячий тур', 'url' => ['/site/gipoteka']],
 	                        	['label' => 'Деловой проездной', 'url' => ['/site/sipoteka']],
-								['label' => 'Для пенсонеров', 'url' => ['/site/vipoteka']],
+								['label' => 'Специальный тариф для пенсионеров', 'url' => ['/site/vipoteka']],
                             ],
              ],
 			 ['label' => 'Бронирование',
@@ -85,7 +85,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             'homeLink' => [
                 'label' => 'Главная',
-                'url' => '/web',
+                'url' => '/',
             ],
         ]) ?>
         <?= Alert::widget() ?>

@@ -36,7 +36,6 @@ $this->params['breadcrumbs'][] = $this->title;
         <p>
             Если у вас есть деловые запросы или другие вопросы, пожалуйста, заполните следующую форму, чтобы связаться с нами. Благодарю вас.
         </p>
-
         <div class="row">
             <div class="col-lg-5">
 
@@ -52,16 +51,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
 						<?= $form->field($model, 'body')->textInput(['maxlength' => true]) ?>
 
-						<div class="form-group">
-							<?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
-						</div>
-
+						<center>
+							<div class="form-group">
+								<?= Html::submitButton('Отправить', ['class' => 'btn btn-success']) ?>
+							</div>
+						</center>
 						<?php ActiveForm::end(); ?>
 
 					</div>
 
             </div>
         </div>
-
     <?php endif; ?>
 </div>

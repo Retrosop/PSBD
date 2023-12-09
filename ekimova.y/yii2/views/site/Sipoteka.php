@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	<li class="kitt-list-item kitt-list-item_ul">Проездной предназначен для многократного перелета по одному из направлений программы экономическим классом на особых условиях.</li>
 	<li class="kitt-list-item kitt-list-item_ul">У нас есть всё, чтобы сделать командировки вашей компании по-настоящему эффективными</li>
 </ul>
-</div><img alt="Деловые поездные" src="/web/image/n.jpg">
+</div><img alt="Деловые поездные" src="/image/n.jpg">
 		   
    </div>
   
