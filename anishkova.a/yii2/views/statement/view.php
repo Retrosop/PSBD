@@ -35,6 +35,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'idstatement',
             'dates',
             'idclent',
+			[
+            'attribute' => 'getClient',
+            'value' => 'client.fio'
+            ],
             'namework',
             'daterin',
             'daterout',

@@ -70,4 +70,8 @@ class Statement extends \yii\db\ActiveRecord
             'dateof' => 'Дата завершения',
         ];
     }
+	public function getClient() {
+        return $this->hasOne(Client::className(), ['idclent' => 'idclient']);
+    }
+	
 }
