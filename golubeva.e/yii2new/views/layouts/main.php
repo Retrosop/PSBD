@@ -85,9 +85,9 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <?php $this->endPage() ?>
 <style>
 body, html {
-  background-image: url("/web/img/fon.jpg");
+  background-image: url("/img/fon.jpg");
 }
 menu, html {
-  background-image: url("/web/img/3.jpg");
+  background-image: url("/img/3.jpg");
 }
 </style>
