@@ -43,7 +43,7 @@ class Order extends \yii\db\ActiveRecord
             'idorder' => 'Idorder',
             'name' => 'Ваше фио',
             'enail' => 'Ваше емайл',
-            'subject' => 'Дата бронирования',
+            'subject' => 'Дата бронирования (например, 31.12.2023)',
             'body' => 'Самолет и т.д',
         ];
     }

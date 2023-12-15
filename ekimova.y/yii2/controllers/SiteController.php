@@ -110,7 +110,9 @@ class SiteController extends Controller
 		
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['contact', 'idorder' => $model->idorder]);
+                Yii::$app->session->setFlash('success', "Ваш заказ принят");
+				return $this->redirect(['contact', 'idorder' => $model->idorder]);
+				
             }
         } else {
             $model->loadDefaultValues();
