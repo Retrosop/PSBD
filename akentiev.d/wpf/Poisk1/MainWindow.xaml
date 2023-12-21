@@ -28,7 +28,6 @@
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <!-- Применяем стиль для каждого элемента в коллекции -->
                             <Border BorderBrush="Black" BorderThickness="1" Margin="5" Padding="5" Width="250" Height="140">
                                 <StackPanel VerticalAlignment="Center">
                                     <TextBlock FontWeight="Bold" HorizontalAlignment="Center">

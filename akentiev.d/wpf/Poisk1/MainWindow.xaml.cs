@@ -50,10 +50,8 @@ namespace Poisk1
 
             if (dataTable != null)
             {
-                // Очищаем предыдущие результаты поиска
                 SearchResults.Clear();
 
-                // Заполняем ObservableCollection результатами из базы данных
                 foreach (DataRow row in dataTable.Rows)
                 {
                     SearchResults.Add(new SearchResult
@@ -101,10 +99,8 @@ namespace Poisk1
 
             if (dataTable != null)
             {
-                // Очищаем предыдущие результаты поиска
                 SearchResults.Clear();
 
-                // Заполняем ObservableCollection результатами из базы данных
                 foreach (DataRow row in dataTable.Rows)
                 {
                     SearchResults.Add(new SearchResult
