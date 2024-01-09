@@ -11,6 +11,7 @@ use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
 
 AppAsset::register($this);
+$cart = \Yii::$app->cart;
 
 $this->registerCsrfMetaTags();
 $this->registerMetaTag(['charset' => Yii::$app->charset], 'charset');
@@ -41,9 +42,22 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         'items' => [
             ['label' => 'Главная страница', 'url' => ['/site/index']],
             ['label' => 'О нас', 'url' => ['/site/about']],
-			['label' => 'Меню', 'url' => ['/site/menud']],
-            ['label' => 'Корзина', 'url' => ['/site/basked']],
-            ['label' => 'Оформить заказ', 'url' => ['/site/contact']]
+              ['label' => 'Меню', 'url' => ['/site/fullmenu']],
+              ['label' => 'Корзина' . " (" . $cart->getTotalCount() . ")", 
+                    'url' => ['/site/basket']],
+            ['label' => 'Контакты', 'url' => ['/site/contact'],
+                ],
+            ['label' => 'Регистрация', 'url' => ['/site/registration']],
+            Yii::$app->user->isGuest
+                ? ['label' => 'Авторизация', 'url' => ['/site/login']]
+                : '<li class="nav-item">'
+                    . Html::beginForm(['/site/logout'])
+                    . Html::submitButton(
+                        'Logout (' . Yii::$app->user->isGuest . ')',
+                        ['class' => 'nav-link btn btn-link logout']
+                    )
+                    . Html::endForm()
+                    . '</li>'
         ]
     ]);
     NavBar::end();
@@ -53,12 +67,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <main id="main" class="flex-shrink-0" role="main">
     <div class="container">
         <?php if (!empty($this->params['breadcrumbs'])): ?>
-            <?= Breadcrumbs::widget([
-			'homeLink' => [
-        'label' => 'Главная',
-        'url' => Yii::$app->homeUrl,
-    ],'links' => $this->params['breadcrumbs']])
-			?>
+            <?= Breadcrumbs::widget(['links' => $this->params['breadcrumbs']]) ?>
         <?php endif ?>
         <?= Alert::widget() ?>
         <?= $content ?>
@@ -66,7 +75,6 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 </main>
 
 <div class="footer">
-<h6>© 2019 - 2023</h6>
 <h6>8 (42622) 3-50-50</h6>
 <h6>8-964-478-50-50</h6>
 <h6>Россия, Биробиджан, Пионерская, 64/а</h6>
@@ -79,15 +87,23 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <h6>Доставка: вс.-чт. до 22:00; пт.-сб. до 01:00.</h6>
             
     </div>
+
 <?php $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>
 <style>
-body, html {
-  background-image: url("/img/fon.jpg");
+h6 {
+    font-size: 15px;
+    text-align: center;
+    color: #FCF3F3;
 }
-menu, html {
-  background-image: url("/img/3.jpg");
+.footer{
+    background-color: #212529;
+    width: 1535px;
+    height: 500p;
 }
+    .header{
+        
+    }
 </style>

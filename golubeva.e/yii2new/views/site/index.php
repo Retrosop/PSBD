@@ -210,6 +210,21 @@ $this->title = 'French Bistro';
             margin-left: calc(-750px * 3);
         }
     }
+            h1.display-4{
+                color: #E8AB84;
+                margin-top: 70px;
+                text-align: center;
+            }
+            h2.display-4{
+                color: #E8AB84;
+            }
+            p.lead{
+                 color: black;
+                text-align: center;
+            }
+            p1{
+                color: black;
+            }
     </style>
 </head>
 
@@ -260,7 +275,7 @@ $this->title = 'French Bistro';
   <table width="100%" cellspacing="0" cellpadding="5">
    <tr> 
     <td width="550" valign="top">
-       <h2>Доставка</h2>
+       <h2 class="display-4">Доставка</h2>
     <p1>Стоимость доставки от 100 до 200₽<br/>
     Заказы на доставку принимаются с 10:00 до 22:00
     <br/>Доставим в течение 1 часа<br/>

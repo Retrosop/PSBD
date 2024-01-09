@@ -14,8 +14,20 @@ $config = [
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'kjkhkhgjgjg',
+            'cookieValidationKey' => 'dsfghj',
         ],
+        'cart' => [
+                'class' => 'devanych\cart\Cart',
+                'storageClass' => 'devanych\cart\storage\CookieStorage',
+                'calculatorClass' => 'devanych\cart\calculators\SimpleCalculator',
+                'params' => [
+                    'key' => 'cart',
+                    'expire' => 604800,
+                    'productClass' => 'app\models\Product',
+                    'productFieldId' => 'id',
+                    'productFieldPrice' => 'price',
+                ],
+            ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -42,14 +54,83 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
         'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
+                'enablePrettyUrl' => true,
+                'showScriptName' => false,
+                'rules' => [
+                    //Назначить товару "Ожидают" (У отдельного заказчика)
+                    [
+                        'pattern' => 'clientorder/waitingproduct/<id>',
+                        'route' => 'clientorder/waitingproduct',
+                    ],
+
+                    //Назначить товару "В процессе" (У отдельного заказчика)
+                    [
+                        'pattern' => 'clientorder/inprogressproduct/<id>',
+                        'route' => 'clientorder/inprogressproduct',
+                    ],
+
+                    //Назначить товару "Готово" (У отдельного заказчика)
+                    [
+                        'pattern' => 'clientorder/doneproduct/<id>',
+                        'route' => 'clientorder/doneproduct',
+                    ],
+
+                    //Назначить бронирующему "Ожидают"
+                    [
+                        'pattern' => 'clientbooking/waitingbooking/<id>',
+                        'route' => 'clientbooking/waitingbooking',
+                    ],
+
+                    //Назначить бронирующему "В процессе"
+                    [
+                        'pattern' => 'clientbooking/inprogressbooking/<id>',
+                        'route' => 'clientbooking/inprogressbooking',
+                    ],
+
+                    //Назначить бронирующему "Готово"
+                    [
+                        'pattern' => 'clientbooking/donebooking/<id>',
+                        'route' => 'clientbooking/donebooking',
+                    ],
+
+                    //Товары в категории
+                    [
+                        'pattern' => 'site/products/<id>',
+                        'route' => 'site/products',
+                    ],
+
+                    //Подкатегория (напитки)
+                    [
+                        'pattern' => 'site/undercategories/<id>',
+                        'route' => 'site/undercategories',
+                    ],
+
+                    //Товары в подкатегории
+                    [
+                        'pattern' => 'site/underproducts/<id>',
+                        'route' => 'site/underproducts',
+                    ],
+
+                    //Товары акции
+                    [
+                        'pattern' => 'site/stocksproducts/<id>',
+                        'route' => 'site/stocksproducts',
+                    ],
+
+                    //Добавить товар в корзину
+                    [
+                        'pattern' => 'site/add/<id>',
+                        'route' => 'site/add',
+                    ],
+
+                    //Добавить товар из подменю в корзину
+                    [
+                        'pattern' => 'site/addunderproduct/<id>',
+                        'route' => 'site/addunderproduct',
+                    ],
+                ],
             ],
-        ],
-        */
     ],
     'params' => $params,
 ];

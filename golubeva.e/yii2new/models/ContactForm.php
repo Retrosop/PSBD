@@ -1,65 +1,54 @@
 <?php
+    namespace app\models;
 
-namespace app\models;
+    use Yii;
+    use yii\base\Model;
 
-use Yii;
-use yii\base\Model;
-
-/**
- * ContactForm is the model behind the contact form.
- */
-class ContactForm extends Model
-{
-    public $name;
-    public $email;
-    public $subject;
-    public $body;
-    public $verifyCode;
-
-
-    /**
-     * @return array the validation rules.
-     */
-    public function rules()
+    class ContactForm extends Model
     {
-        return [
-            // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body'], 'required'],
-            // email has to be a valid email address
-            ['email', 'email'],
-            // verifyCode needs to be entered correctly
-            ['verifyCode', 'captcha'],
-        ];
-    }
+        public $name;
+        public $email;
+        public $subject;
+        public $body;
+        public $verifyCode;
 
-    /**
-     * @return array customized attribute labels
-     */
-    public function attributeLabels()
-    {
-        return [
-            'verifyCode' => 'Verification Code',
-        ];
-    }
-
-    /**
-     * Sends an email to the specified email address using the information collected by this model.
-     * @param string $email the target email address
-     * @return bool whether the model passes validation
-     */
-    public function contact($email)
-    {
-        if ($this->validate()) {
-            Yii::$app->mailer->compose()
-                ->setTo($email)
-                ->setFrom([Yii::$app->params['senderEmail'] => Yii::$app->params['senderName']])
-                ->setReplyTo([$this->email => $this->name])
-                ->setSubject($this->subject)
-                ->setTextBody($this->body)
-                ->send();
-
-            return true;
+        public function rules()
+        {
+            return [
+                ['email', 'match', 'pattern' => '/^[a-zA-z0-9]+@[yandex]+\.[ru]+$/', 'message' => 'Email должен быть "...@yandex.ru"'],
+                ['verifyCode', 'captcha'],
+                ['name', 'required', 'message' => 'Заполните поле "Ваше имя"!'],
+                ['email', 'required', 'message' => 'Заполните поле "Ваш E-mail"!'],
+                ['subject', 'required', 'message' => 'Заполните поле "Тема письма"!'],
+                ['body', 'required', 'message' => 'Заполните поле "Сообщение"!'],
+            ];
         }
-        return false;
+
+        public function attributeLabels()
+        {
+            return [
+                'name' => 'Ваше имя',
+                'email' => 'Ваш E-mail',
+                'subject' => 'Тема письма',
+                'body' => 'Сообщение', 
+                'verifyCode' => '',
+            ];
+        }
+
+        public function contact($email)
+        {
+            if ($this->validate()) {
+                Yii::$app->mailer->compose()
+                    ->setTo('evggol86@gmail.com') //Кому отправить
+                    ->setFrom(['evggol86@gmail.com' => $this->name]) //От кого
+                    ->setSubject($this->subject) //Тема сообщения
+                    ->setHtmlBody($this->body. '<br><br>' . $this->email) //Текст сообщения
+                    ->send(); //Отправка сообщения
+    
+                return true;
+            }
+
+            return false;
+        }
     }
-}
+?>

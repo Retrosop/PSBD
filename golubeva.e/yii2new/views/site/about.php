@@ -58,4 +58,14 @@ $this->params['breadcrumbs'][] = $this->title;
   </table>
 </div>
 </div>
+<style> 
+    h1.display-4{
+        color: #E8AB84;
+           margin-top: 70px;
+                text-align: center;
+    }
+    p1{
+        color: black;
+    }
+</style>
  
