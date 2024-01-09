@@ -11,7 +11,7 @@
 </div>
     
 <p class = "contact_text">
-    <span class = "bold_text">Адрес:</span> город Санкт-Петербург, улица Инженерная, дом 7<br><br>
+    <span class = "bold_text">Адрес:</span> город Биробиджан, улица Пионерская 64/а<br><br>
 
     <span class = "bold_text">Позвонить/забронировать столик:</span> 8 (981) 942-53-40<br><br>
 
@@ -66,6 +66,7 @@
         font-size: 20px;
         bottom: 70px;
         margin-top: 70px;
+        color: black;
     }
 
     .time_text {
