@@ -1,0 +1,5 @@
+DELETE http://psbd/akentiev.d/yii2/web/works-api/delete/5
+POST   http://psbd/akentiev.d/yii2/web/works-api/create
+PATCH  http://psbd/akentiev.d/yii2/web/works-api/update/19
+GET    http://psbd/akentiev.d/yii2/web/works-api
+GET    http://psbd/akentiev.d/yii2/web/works-api/1
