@@ -42,14 +42,16 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
+            'enableStrictParsing' => false,
             'showScriptName' => false,
             'rules' => [
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'works-api', 'pluralize' => false,'extraPatterns' => [ 'POST create' => 'create', 'PUT,PATCH update/<id:\d+>' => 'update', 'DELETE delete/<id:\d+>' => 'delete', ], ],
+                
+                // Добавьте другие правила, если необходимо
             ],
         ],
-        */
     ],
     'params' => $params,
 ];
